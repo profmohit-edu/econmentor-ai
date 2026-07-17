@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EconMentor AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>EconMentor AI</h1>
+      <p class="subtitle">An AI-Powered Interactive Economic Decision Laboratory</p>
+      <p class="tagline">
+        Explore economic decision-making through simulations, scenarios,
+        and AI-guided reasoning.
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Prototype Modules</h2>
+      <div class="module-grid">
+        <button class="module-btn active" data-module="market">Market Simulator</button>
+        <button class="module-btn" data-module="cost">Cost Simulator</button>
+        <button class="module-btn" data-module="decision">Decision Challenge</button>
+      </div>
+    </section>
+
+    <section id="market-module" class="card module-section">
+      <h2>Market Simulator</h2>
+      <div class="form-grid">
+        <div>
+          <label for="demand">Demand</label>
+          <input type="range" id="demand" min="50" max="150" value="100" />
+          <span id="demandValue">100</span>
+        </div>
+        <div>
+          <label for="supply">Supply</label>
+          <input type="range" id="supply" min="50" max="150" value="100" />
+          <span id="supplyValue">100</span>
+        </div>
+        <div>
+          <label for="tax">Tax</label>
+          <input type="range" id="tax" min="0" max="50" value="10" />
+          <span id="taxValue">10</span>
+        </div>
+        <div>
+          <label for="income">Income</label>
+          <input type="range" id="income" min="50" max="150" value="100" />
+          <span id="incomeValue">100</span>
+        </div>
+      </div>
+      <button id="runMarketBtn" class="primary-btn">Run Simulation</button>
+      <div id="marketResults" class="results"></div>
+      <div class="ai-box">
+        <h3>AI Reasoning</h3>
+        <p id="marketExplanation">Run the simulation to see AI-guided reasoning.</p>
+      </div>
+    </section>
+
+    <section id="cost-module" class="card module-section hidden">
+      <h2>Cost Simulator</h2>
+      <div class="form-grid">
+        <div>
+          <label for="fixedCost">Fixed Cost</label>
+          <input type="number" id="fixedCost" value="5000" />
+        </div>
+        <div>
+          <label for="variableCost">Variable Cost per Unit</label>
+          <input type="number" id="variableCost" value="50" />
+        </div>
+        <div>
+          <label for="pricePerUnit">Selling Price</label>
+          <input type="number" id="pricePerUnit" value="100" />
+        </div>
+        <div>
+          <label for="quantity">Quantity</label>
+          <input type="number" id="quantity" value="200" />
+        </div>
+      </div>
+      <button id="runCostBtn" class="primary-btn">Analyze Costs</button>
+      <div id="costResults" class="results"></div>
+      <div class="ai-box">
+        <h3>AI Reasoning</h3>
+        <p id="costExplanation">Run the analysis to see AI-guided reasoning.</p>
+      </div>
+    </section>
+
+    <section id="decision-module" class="card module-section hidden">
+      <h2>Decision Challenge</h2>
+      <p class="scenario-text">
+        Scenario: Fuel prices rise by 20%. You are the operations manager of a delivery company.
+        Choose the best response.
+      </p>
+
+      <div class="decision-options">
+        <button class="decision-btn" data-choice="Increase prices">Increase prices</button>
+        <button class="decision-btn" data-choice="Reduce production">Reduce production</button>
+        <button class="decision-btn" data-choice="Improve efficiency">Improve efficiency</button>
+        <button class="decision-btn" data-choice="Accept lower margins">Accept lower margins</button>
+      </div>
+
+      <div class="ai-box">
+        <h3>AI Feedback</h3>
+        <p id="decisionExplanation">Select an option to get feedback.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
